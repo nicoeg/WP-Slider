@@ -13,15 +13,15 @@ class WPSlickSlider {
 		if (is_admin()) {
 			require_once 'admin/WPSlickSliderAdmin.php';
 
-			new WPSliderAdmin;
+			new WPSlickSliderAdmin;
 		}
 	}
 
 	public function register_post_type() {
-		register_post_type('slider', [
+		register_post_type('slick_slider', [
             'label' => 'Sliders',
             'public' => true,
-			'supports' => ['title', 'editor']
+			'supports' => ['title']
         ]);
 	}
 }
