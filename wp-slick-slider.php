@@ -1,17 +1,17 @@
 <?php
 
 /**
- * Plugin Name: WP Slider
- * Description: Create elegant sliders and ride hippos
+ * Plugin Name: WP Slick Slider
+ * Description: Create slick sliders
  * Version: 0.0.1
  */
 
-class WPSlider {
+class WPSlickSlider {
 	public function __construct() {
 		add_action('init', [$this, 'register_post_type']);
 
 		if (is_admin()) {
-			require_once 'admin/WPSliderAdmin.php';
+			require_once 'admin/WPSlickSliderAdmin.php';
 
 			new WPSliderAdmin;
 		}
@@ -26,4 +26,4 @@ class WPSlider {
 	}
 }
 
-new WPSlider;
+new WPSlickSlider;

@@ -1,6 +1,6 @@
 <?php
 
-class WPSliderAdmin {
+class WPSlickSliderAdmin {
 	public function __construct() {
 		add_action('add_meta_boxes', [$this, 'add_meta_boxes']);
 	}
