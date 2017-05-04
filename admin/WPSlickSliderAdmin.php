@@ -1,10 +1,16 @@
 <?php
 
+require_once __DIR__ . '/../DatabaseHandler.php';
+
 class WPSlickSliderAdmin {
+	protected $db;
+
 	public function __construct() {
 		add_action('add_meta_boxes', [$this, 'add_meta_boxes']);
 		add_action('save_post', [$this, 'save_slider'], 10, 3);
 		add_action('admin_enqueue_scripts', [$this, 'add_scripts_and_styles']);
+
+		$this->db = new DatabaseHandler;
 	}
 
 	public function add_meta_boxes() {
@@ -41,16 +47,7 @@ class WPSlickSliderAdmin {
 	public function display_slides_meta() {
 		wp_enqueue_media();
 		wp_enqueue_script('slick_slider_js');
-		$slide_names = get_post_meta( get_the_ID(), 'ss_slide_name');
-		$slide_images = get_post_meta( get_the_ID(), 'ss_slide_image');
-		
-		$slides = array_map(function($index, $name) use($slide_images) {
-			return [
-				'name' => $name,
-				'image_id' => $slide_images[$index],
-				'image_url' => wp_get_attachment_url($slide_images[$index])
-			];
-		}, array_keys($slide_names), $slide_names);
+		$slides = $this->db->get_slides(get_the_ID());
 
 		require_once __DIR__ . '/../views/meta-boxes/slides.php';
 	}
