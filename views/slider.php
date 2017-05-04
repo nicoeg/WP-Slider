@@ -1,4 +1,4 @@
-<div class="slick-slider" style="width: <?= strlen($slider->data['width']) > 0 ? $slider->data['width'] . 'px' : '100%' ?>; height: <?= $slider->data['height'] ?: '300' ?>px;">
+<div class="slick-slider" data-id="<?= $slider->ID ?>" style="width: <?= strlen($slider->data['width']) > 0 ? $slider->data['width'] . 'px' : '100%' ?>; height: <?= $slider->data['height'] ?: '300' ?>px;">
 	<div class="slider">
 		<div class="arrow left">
 			<img src="<?= plugins_url('../img/arrow.png', __FILE__); ?>" alt="Left arrow">
