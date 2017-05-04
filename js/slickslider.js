@@ -28,7 +28,10 @@ jQuery( document ).ready( function( $ ) {
 
 	function intervaller(index, duration) {
 		window.setInterval(function() {
-			if (ss_data[index].skip) {	ss_data[index].skip = 0; return false;	}
+			if (ss_data[index].skip) { 
+				ss_data[index].skip = 0; 
+				return false; 
+			}
 
 			next = (!ss_data[index].element.find('.slide.active').next().length) ? ss_data[index].element.find('.slide').first() : ss_data[index].element.find('.slide.active').next();
 			
