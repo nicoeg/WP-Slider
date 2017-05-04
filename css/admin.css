@@ -4,12 +4,20 @@
 }
 
 .slides {
+	padding: 20px;
 	display: flex;
 }
 
 .slide {
 	width: 133px;
 	margin-right: 20px;
+	cursor: pointer;
+}
+
+.slide-placeholder {
+	width: 133px;
+	border: 2px dashed grey;
+	margin: 0 10px;
 }
 
 .image-preview-wrapper {

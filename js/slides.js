@@ -2,7 +2,11 @@ jQuery( document ).ready( function( $ ) {
 	// Uploading files
 	var file_frame, element, image_input;
 	var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
-	var slide_template = '<div class="slide"><div class="slide-name form-control"><label>Title <br><input type="text" name="ss_name[]" class="large-text"></label></div><div class="image-preview-wrapper"><img class="image-preview" src=""></div><input class="button-secondary upload-image" type="button" value="Select Image"/><input type="hidden" name="ss_image[]" class="image-input"></div>';
+	var slide_template = '<div class="slide"><div class="slide-name form-control"><label>Title <br><input type="text" name="ss_name[]" class="large-text"></label></div><div class="image-preview-wrapper"><img class="image-preview" src=""></div><input class="button-secondary upload-image" type="button" value="Select Image"/><input type="hidden" name="ss_image[]" class="image-input"><div class="button ss-delete">x</div></div>';
+
+	$('.slides').sortable({
+		placeholder: "slide-placeholder"
+	});
 
 	$(document).on('click', '.upload-image', function( event ) {
 		event.preventDefault();

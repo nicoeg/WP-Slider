@@ -56,6 +56,7 @@ class WPSlickSliderAdmin {
 
 	public function display_slides_meta() {
 		wp_enqueue_media();
+		wp_enqueue_script('jquery-ui-sortable');
 		wp_enqueue_script('slick_slider_admin_js');
 		$slides = $this->db->get_slides(get_the_ID());
 
