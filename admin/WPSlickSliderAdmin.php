@@ -9,8 +9,20 @@ class WPSlickSliderAdmin {
 		add_action('add_meta_boxes', [$this, 'add_meta_boxes']);
 		add_action('save_post', [$this, 'save_slider'], 10, 3);
 		add_action('admin_enqueue_scripts', [$this, 'add_scripts_and_styles']);
+		add_action('admin_notices',[$this, 'add_notice']);
 
 		$this->db = new DatabaseHandler;
+	}
+
+	public function add_notice() {
+		$screen = get_current_screen();
+		$slider_id = get_the_ID();
+
+		if( $screen->id !='slick_slider' || !$slider_id) {
+        	return;
+		}
+
+		require __DIR__ . '/../views/admin_notice.php';
 	}
 
 	public function add_meta_boxes() {
