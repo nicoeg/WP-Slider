@@ -16,6 +16,12 @@ class WPSlickSlider {
 		add_action('init', [$this, 'register_post_type']);
 		add_shortcode('slickslider', [$this, 'display_slider']);
 		add_action('wp_enqueue_scripts', [$this, 'register_assets']);
+		add_action('widgets_init', function() {
+			require_once 'SlickSliderWidget.php';
+			
+			register_widget('SlickSliderWidget');
+		});
+
 
 		if (is_admin()) {
 			require_once 'admin/WPSlickSliderAdmin.php';

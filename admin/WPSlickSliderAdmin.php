@@ -39,7 +39,7 @@ class WPSlickSliderAdmin {
 	public function display_slider_info_meta() {
 		$meta = $this->db->get_slider_meta(get_the_ID());
 
-		require_once __DIR__ . '/../views/meta-boxes/slider-info.php';
+		require __DIR__ . '/../views/meta-boxes/slider-info.php';
 	}
 
 	public function display_slides_meta() {
@@ -47,7 +47,7 @@ class WPSlickSliderAdmin {
 		wp_enqueue_script('slick_slider_admin_js');
 		$slides = $this->db->get_slides(get_the_ID());
 
-		require_once __DIR__ . '/../views/meta-boxes/slides.php';
+		require __DIR__ . '/../views/meta-boxes/slides.php';
 	}
 
 	public function save_slider($post_id, $post, $update) {

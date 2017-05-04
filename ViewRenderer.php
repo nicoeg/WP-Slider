@@ -15,7 +15,7 @@ class ViewRenderer {
 		wp_enqueue_script('slick_slider_js');
 		wp_enqueue_style('slick_slider_css');
 
-		require_once 'views/slider.php';
+		require 'views/slider.php';
 	}
 
 }
