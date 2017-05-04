@@ -37,9 +37,7 @@ class WPSlickSliderAdmin {
 	}
 
 	public function display_slider_info_meta() {
-		$width = get_post_meta( get_the_ID(), 'ss_width', true );
-		$height = get_post_meta( get_the_ID(), 'ss_height', true );
-		$duration = get_post_meta( get_the_ID(), 'ss_duration', true );
+		$meta = $this->db->get_slider_meta(get_the_ID());
 
 		require_once __DIR__ . '/../views/meta-boxes/slider-info.php';
 	}
