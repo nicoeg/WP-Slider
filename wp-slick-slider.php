@@ -43,20 +43,8 @@ class WPSlickSlider {
 			return;
 		}
 
-		$slider_id = $attributes[0];
-
-		if (!$this->db->slider_exists($slider_id)) {
-			echo "Slider does not exist";
-			return;
-		}
-
-		$slider = $this->db->get_slider($slider_id);
-
-		wp_localize_script('slick_slider_js', 'ss_data', $slider->data);
-		wp_enqueue_script('slick_slider_js');
-		wp_enqueue_style('slick_slider_css');
-
-		require_once 'views/slider.php';
+		require_once 'ViewRenderer.php';
+		ViewRenderer::render_slider($attributes[0]);
 	}
 }
 
