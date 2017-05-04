@@ -53,4 +53,8 @@ jQuery( document ).ready( function( $ ) {
 	$(document).on('click', '.ss-add', function() {
 		$('.slides').append(slide_template);
 	});
+
+	$(document).on('click', '.ss-delete', function() {
+		$(this).closest('.slide').remove();
+	});
 });

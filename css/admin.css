@@ -8,12 +8,12 @@
 }
 
 .slide {
-	width: 100px;
+	width: 133px;
 	margin-right: 20px;
 }
 
 .image-preview-wrapper {
-	height: 100px; 
+	height: 130px; 
 	width: 100%;
 	overflow: hidden;
 }
@@ -25,4 +25,14 @@
 
 .slide-name {
 	margin-bottom: 20px;
+}
+
+.upload-image {
+	width: 100px;
+}
+
+.ss-delete {
+	background: #dc3232 !important;
+	border-color: #ab2727 !important;
+	color: #fff !important;
 }
