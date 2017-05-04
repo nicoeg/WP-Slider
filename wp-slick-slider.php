@@ -33,7 +33,11 @@ class WPSlickSlider {
 	public function register_post_type() {
 		register_post_type('slick_slider', [
             'label' => 'Sliders',
-            'public' => true,
+            'public' => false,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'exclude_from_search' => true,
+			'show_in_nav_menus' => false,
 			'supports' => ['title']
         ]);
 	}
